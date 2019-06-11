@@ -1,24 +1,21 @@
 #!/usr/bin/python3
 
-import playsound
+import os
 import time
 
 
 
-# Uncomment the operating system you are using
-operating_system = "linux"
-# operating_system = "windows"
-# operating_system = "mac"
+
+
+# Audio beep setup
+duration = 0.1  # seconds
+freq = 430  # Hz
+
 
 # -- FUNCTIONS ---------------------------------------
 
 def playBell():
-	if operating_system == "linux":
-		playsound._playsoundNix("bell.wav")
-	elif operating_system == "windows":
-		playsound._playsoundWin("bell.wav")
-	elif operating_system == "mac":
-		playsound._playsoundOSX("bell.wav")
+	os.system('play -nq -t alsa synth {} sine {}'.format(duration, freq))
 
 
 # -- START THE SESSION ---------------------------------
