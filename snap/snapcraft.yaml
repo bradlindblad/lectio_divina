@@ -13,7 +13,7 @@ confinement: devmode # use 'strict' once you have the right plugs and slots
 
 apps:
   pray:
-    command: bin/pray
+    command: pray
 
 parts:
   pray:
