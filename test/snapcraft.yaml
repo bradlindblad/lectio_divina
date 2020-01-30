@@ -1,0 +1,19 @@
+name: pray
+version: git
+summary: OfflineIMAP
+description: |
+  OfflineIMAP is software that downloads your email mailbox(es) as local
+  Maildirs. OfflineIMAP will synchronize both sides via IMAP.
+confinement: devmode
+base: core18
+
+parts:
+  pray:
+    plugin: python
+    python-version: python3
+    source: .
+
+
+apps:
+  pray:
+    command: bin/offlineimap
