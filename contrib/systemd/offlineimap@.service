@@ -1,0 +1,8 @@
+[Unit]
+Description=Offlineimap Service for account %i
+
+[Service]
+ExecStart=/usr/bin/offlineimap -a %i -u syslog
+
+[Install]
+WantedBy=mail.target

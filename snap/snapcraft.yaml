@@ -7,18 +7,23 @@ description: |
   practice of lectio divina. This timed session takes about 12 minutes and consists of 
   4 parts: (1) Lectio: read, (2) Meditatio: meditate, (3) Oratio: prayer and (4) Contemplatio: sit in silence.
 
-grade: devel # must be 'stable' to release into candidate/stable channels
-confinement: devmode # use 'strict' once you have the right plugs and slots
+grade: stable # must be 'stable' to release into candidate/stable channels
+confinement: strict # use 'strict' once you have the right plugs and slots
+
+
+parts:
+  pray:
+    plugin: python
+    python-version: python3
+    source: .
+
+
 
 
 apps:
   pray:
-    command: pray
+    command: bin/offlineimap
+    plugs: [x11, unity7, pulseaudio, home, audio-playback]
+    
 
-parts:
-  pray:
-    # See 'snapcraft plugins'
-    source: https://github.com/bradlindblad/lectio_divina.git
-    source-tag: 0.1.0
-    plugin: python
 
